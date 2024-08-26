@@ -1,0 +1,108 @@
+.education-section {
+  padding: 50px 20px;
+  background-color: #0a0a0a; /* Background color */
+  color: #fff; /* Text color */
+  font-family: Arial, sans-serif;
+  width: "100%" !important;
+}
+
+.education-header {
+  text-align: center;
+  font-size: 32px;
+  color: #ffffff; /* White color for header text */
+  margin-bottom: 40px;
+}
+
+.education-timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the timeline */
+}
+
+.education-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 40px;
+  width: 50%;
+  position: relative;
+}
+
+.education-item.left {
+  justify-content: flex-end;
+  float: right;
+}
+
+.education-item.right {
+  justify-content: flex-start;
+  align-self: flex-end;
+}
+.education-item.right2 {
+  margin-top: 10%;
+  margin-right: 200px;
+  justify-content: flex-start;
+  align-self: flex-end;
+}
+
+.education-year {
+  background-color: #39b54a; /* Green background color */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 18px;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.education-item.left .education-year {
+  left: -20px;
+}
+
+.education-item.right .education-year {
+  right: -20px;
+}
+.education-item.right2 .education-year {
+  right: -20px;
+}
+
+.education-content {
+  background-color: #1a1a1a; /* Darker background for content box */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  position: relative;
+}
+
+.education-institution {
+  font-size: 18px;
+  color: #ffffff; /* White color for institution name */
+  margin-bottom: 5px;
+}
+
+.education-degree {
+  font-size: 16px;
+  color: #39b54a; /* Green color for degree */
+  margin-bottom: 5px;
+}
+
+.education-specialization {
+  font-size: 14px;
+  color: #a1a1a1; /* Lighter color for specialization */
+}
+
+/* Add a vertical line connecting the year dots */
+.education-timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #39b54a; /* Green color for the line */
+  z-index: 0;
+  transform: translateX(-50%);
+}
