@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import profile from "../Images/profile.png";
 import AAA from "../Images/AAA.jpg";
 import { HiMiniInformationCircle } from "react-icons/hi2";
@@ -14,14 +14,31 @@ import Skills from "./Skills";
 import Resume from "./Resume";
 import Whyme from "./Whyme";
 import Contact from "./Contact";
-
-
+import Navbar from "./Navbar";
 
 function Profile() {
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const skillsRef = useRef(null);
+  const resumeRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <>
+      <Navbar
+        scrollToAbout={() => scrollToSection(aboutRef)}
+        scrollToProjects={() => scrollToSection(projectsRef)}
+        scrollToSkills={() => scrollToSection(skillsRef)}
+        scrollToResume={() => scrollToSection(resumeRef)}
+        scrollToContact={() => scrollToSection(contactRef)}
+      />
+
       <div
         className="main-container"
+        ref={aboutRef}
         style={{
           minHeight: "500px",
           border: "1px solid black",
@@ -36,6 +53,7 @@ function Profile() {
       >
         <div
           className="sub"
+          
           style={{
             display: "flex",
             flexDirection: "row",
@@ -45,6 +63,7 @@ function Profile() {
             gap: "20px",
             marginBottom: "20px",
             backgroundColor: "rgba(249, 249, 255, 0.8)",
+            marginTop: "40px",
           }}
         >
           <div style={{ flex: 1, marginLeft: "20%", width: "100%" }}>
@@ -64,7 +83,9 @@ function Profile() {
               I Am Into{" "}
               <span style={{ color: "#e74c3c" }}>Web Development !</span>
             </p>
-            <a href="https://drive.google.com/file/d/1_H65lzEULAOxkrG33WjE3AlCG8sXo2I-/view?usp=sharing" target="blank"
+            <a
+              href="https://drive.google.com/file/d/1_H65lzEULAOxkrG33WjE3AlCG8sXo2I-/view?usp=sharing"
+              target="blank"
               className="btn btn-dark"
               style={{
                 padding: "3%",
@@ -78,11 +99,41 @@ function Profile() {
               className="icons mt-4"
               style={{ display: "flex", flexDirection: "row", gap: "5px" }}
             >
-              <a href="https://www.linkedin.com/in/shishir-ghimire-752543230/" style={{color: "black"}} target="blank"><FaLinkedin style={{ height: "40px", width: "40px" }} /></a>
-              <a href="https://github.com/shishirghimire027" style={{color: "black"}} target="blank"><FaGithubSquare style={{ height: "40px", width: "40px" }} /></a>
-              <a href="https://x.com/_Shishirghimire" style={{color: "black"}} target="blank"><FaSquareXTwitter style={{ height: "40px", width: "40px" }} /></a>
-              <a href="https://www.facebook.com/profile.php?id=100077893575494" style={{color: "black"}} target="blank"><FaSquareFacebook style={{ height: "40px", width: "40px" }} /></a>
-              <a href="https://www.instagram.com/_shishir_ghimire/" style={{color: "black"}} target="blank"><FaSquareInstagram style={{ height: "40px", width: "40px" }} /></a>
+              <a
+                href="https://www.linkedin.com/in/shishir-ghimire-752543230/"
+                style={{ color: "black" }}
+                target="blank"
+              >
+                <FaLinkedin style={{ height: "40px", width: "40px" }} />
+              </a>
+              <a
+                href="https://github.com/shishirghimire027"
+                style={{ color: "black" }}
+                target="blank"
+              >
+                <FaGithubSquare style={{ height: "40px", width: "40px" }} />
+              </a>
+              <a
+                href="https://x.com/_Shishirghimire"
+                style={{ color: "black" }}
+                target="blank"
+              >
+                <FaSquareXTwitter style={{ height: "40px", width: "40px" }} />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100077893575494"
+                style={{ color: "black" }}
+                target="blank"
+              >
+                <FaSquareFacebook style={{ height: "40px", width: "40px" }} />
+              </a>
+              <a
+                href="https://www.instagram.com/_shishir_ghimire/"
+                style={{ color: "black" }}
+                target="blank"
+              >
+                <FaSquareInstagram style={{ height: "40px", width: "40px" }} />
+              </a>
             </div>
           </div>
           <img
@@ -117,7 +168,7 @@ function Profile() {
               borderRadius: "5px",
             }}
           />
-          <div>
+          <div > 
             <p style={{ color: "#808080", fontWeight: "bold" }}>ABOUT ME</p>
             <p style={{ fontSize: "28px", fontWeight: "bold" }}>
               PERSONAL DETAILS
@@ -139,16 +190,20 @@ function Profile() {
           </div>
         </div>
 
-      
-        <Projects />
-        <Skills />
-        <Resume />
+        <div ref={projectsRef}>
+          <Projects />
+        </div>
+        <div ref={skillsRef} >
+          <Skills />
+        </div>
+
+        <div ref={resumeRef} style={{width: "100%"}}>
+          <Resume />
+        </div>
         <Whyme />
-        <Contact />
-
-
-
-
+        <div ref={contactRef} style={{width: "99%", textAlign: "center"}}>
+          <Contact />
+        </div>
       </div>
     </>
   );

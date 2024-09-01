@@ -21,7 +21,7 @@ function Skills() {
   return (
     <>
       <div>
-        <h2 id="div2" className="reas mt-5">
+        <h2 id="div2" className="reas mt-5 text-center">
           Development Skills
         </h2>
         <p className="reas mt-3 text-center">

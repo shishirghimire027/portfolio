@@ -5,7 +5,7 @@ import Profile from "../componets/Home";
 function Home() {
   return (
     <>
-      <Navbar />
+      
       <Profile />
     </>
   );

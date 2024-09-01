@@ -14,7 +14,7 @@ function Contact() {
           backgroundColor: "rgba(249, 249, 255, 0.8)",
           width: "100%",
           justifyContent: "center",
-          marginTop: '50px'
+          marginTop: "50px",
         }}
       >
         <h2 id="div2" className="reas mt-3 text-center">
@@ -26,8 +26,7 @@ function Contact() {
         >
           Lets Get In Touch!
         </h6>{" "}
-      
-        <p className="reas mt-3 text-center" style={{ width: "100%" }}>
+        <p className="reas mt-3 text-center">
           Feel free to send me an email or contact me and I will get back to you
           as soon as possible!
         </p>
@@ -112,7 +111,17 @@ function Contact() {
         </div>
       </div>
       <div>
-        <p style={{margin: '2px', width: "100%", background: "rgba(0, 0, 0, 0.85)", color: 'white', padding: "5px"}}>Designed and developed by Shishir Ghimire © 2024</p>
+        <p
+          style={{
+            margin: "2px",
+            width: "100%",
+            background: "rgba(0, 0, 0, 0.85)",
+            color: "white",
+            padding: "5px",
+          }}
+        >
+          Designed and developed by Shishir Ghimire © 2024
+        </p>
       </div>
     </>
   );
