@@ -181,12 +181,12 @@ function Profile() {
               coupled with a genuine passion to make valuable contributions to a
               dynamic and innovative company.
             </p>
-            <button className="btn btn-dark">
+            <a href="https://www.linkedin.com/in/shishir-ghimire-752543230/"  target="blank" className="btn btn-dark">
               Learn More{" "}
               <HiMiniInformationCircle
                 style={{ marginLeft: "7px", height: "20px", width: "20px" }}
               />
-            </button>
+            </a>
           </div>
         </div>
 
